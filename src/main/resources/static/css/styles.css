@@ -1,11 +1,11 @@
 body {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     background: linear-gradient(135deg, #e0c2ff, #a8d5ff);
-    margin: 10%; /* Apply 10% margin on all sides */
-    display: block; /* Use flexbox for centering */
+    margin: 10%;
+    display: block;
     justify-content: center;
     align-items: center;
-    min-height: 100vh; /* Ensure full viewport height */
+    min-height: 100vh;
 }
 
 h2 {
