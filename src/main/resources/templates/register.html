@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Registration Form</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/styles.css}" />
+</head>
+<body>
+    <h2>Register Now</h2>
+    <form th:action="@{/register}" th:object="${registration}" method="post">
+        
+        <label>First Name: </label>
+        <input type="text" th:field="*{firstName}" />
+        <span th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}"></span><br>
+
+        <label>Last Name: </label>
+        <input type="text" th:field="*{lastName}" />
+        <span th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}"></span><br>
+
+        <label>Company: </label>
+        <input type="text" th:field="*{company}" />
+        <span th:if="${#fields.hasErrors('company')}" th:errors="*{company}"></span><br>
+
+        <label>Address: </label>
+        <textarea th:field="*{address}"></textarea>
+        <span th:if="${#fields.hasErrors('address')}" th:errors="*{address}"></span><br>
+
+        <label>City: </label>
+        <input type="text" th:field="*{city}" />
+        <span th:if="${#fields.hasErrors('city')}" th:errors="*{city}"></span><br>
+
+        <label>State: </label>
+        <input type="text" th:field="*{state}" />
+        <span th:if="${#fields.hasErrors('state')}" th:errors="*{state}"></span><br>
+
+        <label>Country: </label>
+        <input type="text" th:field="*{country}" />
+        <span th:if="${#fields.hasErrors('country')}" th:errors="*{country}"></span><br>
+
+        <label>Email: </label>
+        <input type="email" th:field="*{email}" />
+        <span th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></span><br>
+
+        <label>Phone: </label>
+        <input type="text" th:field="*{phoneNumber}" />
+        <span th:if="${#fields.hasErrors('phoneNumber')}" th:errors="*{phoneNumber}"></span><br>
+
+        <label>Meal Preference: </label>
+        <select th:field="*{mealPreference}">
+            <option value="Vegetarian">Vegetarian</option>
+            <option value="Non-Vegetarian">Non-Vegetarian</option>
+        </select>
+        <span th:if="${#fields.hasErrors('mealPreference')}" th:errors="*{mealPreference}"></span><br>
+
+        <label>Payment Mode: </label>
+        <input type="checkbox" th:field="*{paymentMode}" value="Cash" /> Cash
+        <input type="checkbox" th:field="*{paymentMode}" value="Cheque" /> Cheque
+        <input type="checkbox" th:field="*{paymentMode}" value="Demand Draft" /> Demand Draft
+        <span th:if="${#fields.hasErrors('paymentMode')}" th:errors="*{paymentMode}"></span><br>
+
+        <label>Cheque Number: </label>
+        <input type="text" th:field="*{chequeNumber}" />
+        <span th:if="${#fields.hasErrors('chequeNumber')}" th:errors="*{chequeNumber}"></span><br>
+
+        <label>Bank Name: </label>
+        <input type="text" th:field="*{bankName}" />
+        <span th:if="${#fields.hasErrors('bankName')}" th:errors="*{bankName}"></span><br>
+
+        <label>Payable At: </label>
+        <input type="text" th:field="*{payableAt}" />
+        <span th:if="${#fields.hasErrors('payableAt')}" th:errors="*{payableAt}"></span><br>
+
+        <button type="submit">Submit</button>
+        <button type="submit" formaction="/register/reset">Reset</button>
+
+    </form>
+</body>
+</html>
